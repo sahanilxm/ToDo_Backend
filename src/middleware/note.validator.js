@@ -1,5 +1,7 @@
 const joi = require('joi');
 
+
+// validator to validate the schema of a note
 const validateNote = (req, res, next) => {
   const schema = joi.object({
     title : joi.string().max(255).required(),
@@ -13,7 +15,7 @@ const validateNote = (req, res, next) => {
     });
   }
 
-  next();
+  next(); // if note gets validated, then transfer to the controller
 };
 
 module.exports = { validateNote };

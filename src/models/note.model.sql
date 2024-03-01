@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS todo_dev_db;
 
+-- Table Definition
 CREATE TABLE notes(
   note_id SERIAL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,

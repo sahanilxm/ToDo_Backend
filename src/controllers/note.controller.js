@@ -1,8 +1,10 @@
 const pool = require("../config/db.config.js");
 
+
+// Function to handle the creation of a new task
 const createNote = async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description } = req.body; 
 
     let imageURL = null;
     if(req.file){
@@ -22,6 +24,8 @@ const createNote = async (req, res) => {
   }
 };
 
+
+// Function to fetch a specific Note by their ID
 const getNote = async (req, res) => {
   try {
     const { id } = req.params;
@@ -39,6 +43,8 @@ const getNote = async (req, res) => {
   }
 };
 
+
+// Function to fetch all the Notes
 const getAllNote = async (req, res) => {
   try {
     const { page, pageSize } = req.query;
@@ -67,6 +73,8 @@ const getAllNote = async (req, res) => {
   }
 };
 
+
+// Function to update a Note
 const updateNote = async (req, res) => {
   try {
     const { id } = req.params;
@@ -91,6 +99,8 @@ const updateNote = async (req, res) => {
   }
 };
 
+
+// Function to Delete a Note
 const deleteNote = async (req, res) => {
   try {
     const { id } = req.params;
