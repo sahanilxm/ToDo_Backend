@@ -43,7 +43,7 @@ const getAllNote = async (req, res) => {
   try {
     const { page, pageSize } = req.query;
     const pageNumber = parseInt(page) || 1;
-    const size = parseInt(pageSize) || 3;
+    const size = parseInt(pageSize) || 5;
     const offset = (pageNumber - 1) * size;
 
     const allNotes = await pool.query(
